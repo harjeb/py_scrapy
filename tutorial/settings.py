@@ -13,7 +13,8 @@ BOT_NAME = 'tutorial'
 
 SPIDER_MODULES = ['tutorial.spiders']
 NEWSPIDER_MODULE = 'tutorial.spiders'
-
+ITEM_PIPELINES = {'tutorial.pipelines.MyImagesPipeline': 100}
+IMAGES_STORE = 'images' #存储图片的文件夹位置
 #set export encode for json file
 FEED_EXPORT_ENCODING = 'utf-8'
 

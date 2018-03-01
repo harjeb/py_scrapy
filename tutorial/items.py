@@ -16,4 +16,6 @@ class TutorialItem(scrapy.Item):
 class DmozItem(scrapy.Item):
     name = scrapy.Field()
     link = scrapy.Field()
-    pic = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    downloadlink = scrapy.Field()
