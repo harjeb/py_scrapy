@@ -2,7 +2,7 @@
 
 import scrapy
 from tutorial.items import DmozItem
-import time
+import time,re
 
 class MovieSpider(scrapy.Spider):
     name = "movie"
@@ -11,10 +11,11 @@ class MovieSpider(scrapy.Spider):
     #    "https://www.zhaiiker.com/category/resource/4kresource"
     #]
 
+
     def start_requests(self):
         url = 'https://www.zhaiiker.com/category/resource/4kresource'
         # FormRequest 是Scrapy发送POST请求的方法
-        for i in range(1,100):
+        for i in range(1,30):
             yield scrapy.FormRequest(
                 url=url,
                 formdata={"paged": str(i), "append": "d-archive", "action": "ajax_load_posts", "query":"416", "page":"cat"},
